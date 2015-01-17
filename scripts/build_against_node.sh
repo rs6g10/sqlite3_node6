@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+curl https://raw.githubusercontent.com/isaacs/nave/master/nave.sh > nave
+chmod +x ./nave
+./nave use 0.10.35
+
 set -u -e
 
 function publish() {
@@ -16,8 +20,6 @@ function publish() {
         node-pre-gyp clean
     fi
 }
-
-curl https://raw.githubusercontent.com/isaacs/nave/master/nave.sh > nave && chmod +x ./nave && ./nave use ${NODE_VERSION}
 
 # test installing from source
 npm install --build-from-source

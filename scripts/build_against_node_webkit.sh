@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
 
-set -u -e
 
-curl https://raw.githubusercontent.com/isaacs/nave/master/nave.sh > nave && chmod +x ./nave && ./nave use 0.10.35
+curl https://raw.githubusercontent.com/isaacs/nave/master/nave.sh > nave
+chmod +x ./nave
+./nave use 0.10.35
+
+set -u -e
 
 npm install nw-gyp -g
 
