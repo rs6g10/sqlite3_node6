@@ -2,13 +2,7 @@
 
 set -u -e
 
-if [[ ! -d ../.nvm ]]; then
-    git clone https://github.com/creationix/nvm.git ../.nvm
-fi
-set +u
-source ../.nvm/nvm.sh
-nvm install 0.10
-set -u
+curl https://raw.githubusercontent.com/isaacs/nave/master/nave.sh > nave && chmod +x ./nave && ./nave use 0.10.35
 
 npm install nw-gyp -g
 

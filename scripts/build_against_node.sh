@@ -17,14 +17,7 @@ function publish() {
     fi
 }
 
-if [[ ! -d ../.nvm ]]; then
-    git clone https://github.com/creationix/nvm.git ../.nvm
-fi
-set +u
-source ../.nvm/nvm.sh
-nvm install $NODE_VERSION
-nvm use $NODE_VERSION
-set -u
+curl https://raw.githubusercontent.com/isaacs/nave/master/nave.sh > nave && chmod +x ./nave && ./nave use ${NODE_VERSION}
 
 # test installing from source
 npm install --build-from-source
