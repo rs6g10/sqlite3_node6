@@ -4,7 +4,7 @@ set -u -e
 
 function publish() {
     if test "${COMMIT_MESSAGE#*'[publish binary]'}" != "$COMMIT_MESSAGE"; then
-        node-pre-gyp publish
+        node-pre-gyp publish || true
         node-pre-gyp info
         node-pre-gyp clean
         make clean
