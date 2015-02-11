@@ -55,12 +55,13 @@ if [[ $(uname -s) == 'Linux' ]]; then
     export PATH=$(pwd)/node-${NVER}-${platform}-x86/bin:$PATH
     if [[ ${NODE_VERSION:0:4} == 'iojs' ]]; then
         wget https://iojs.org/download/release/${NVER}/iojs-${NVER}-${platform}-x86.tar.gz
-        tar xf iojs-${NVER}-${platform}-x86.tar.gz
+        tar xvf iojs-${NVER}-${platform}-x86.tar.gz
         # enable 32 bit iojs
-        export PATH=$(pwd)/iojs-${NVER}-${platform}-x86/bin:$PATH
+        #export PATH=$(pwd)/iojs-${NVER}-${platform}-x86/bin:$PATH
+        export PATH=$(pwd)/iojs-${NVER}-${platform}-ia32/bin:$PATH
     else
         wget http://nodejs.org/dist/${NVER}/node-${NVER}-${platform}-x86.tar.gz
-        tar xf node-${NVER}-${platform}-x86.tar.gz
+        tar xvf node-${NVER}-${platform}-x86.tar.gz
         # enable 32 bit node
         export PATH=$(pwd)/node-${NVER}-${platform}-x86/bin:$PATH
     fi
